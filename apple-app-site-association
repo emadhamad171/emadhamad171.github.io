@@ -2,15 +2,40 @@
     "applinks": {
         "apps": [],
         "details": [
-            {
-                "appIDs": [
-                    "FQHA9FN6J6.com.sportsmillions.app",
-                    "FQHA9FN6J6.com.sportsmillions.pickem.app"
-                ],
-                "paths": [
-                    "*"
-                ]
+      {
+        "comment": "Pickem app",
+        "appIDs": [
+          "FQHA9FN6J6.com.sportsmillions.pickem.app"
+        ],
+        "components": [
+          {
+            "/": "/share-picks/*",
+            "?": {
+              "code": "*"
             }
+          },
+          {
+            "/": "/v1/confirm-email/*"
+          }
+        ]
+      },
+      {
+        "comment": "Blitzem app",
+        "appIDs": [
+          "FQHA9FN6J6.com.sportsmillions.app"
+        ],
+        "components": [
+          {
+            "/": "/refer-friends/*",
+            "?": {
+              "code": "*"
+            }
+          },
+          {
+            "/": "/v1/confirm-email/*"
+          }
+        ]
+      }
         ]
     },
     "webcredentials": {
