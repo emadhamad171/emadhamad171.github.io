@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Redirecting...</title>
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+      // Detect platform
+      var isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+      var isAndroid = /android/i.test(navigator.userAgent);
+      var isDesktop = !isiOS && !isAndroid;
+
+      // Define URL schemes and store links
+      var appScheme = isiOS ? 'brandname://mobile' : 'brandname://mobile'; // Replace with your URL schemes
+      var storeLink = isiOS 
+          ? 'https://apps.apple.com/app/idYOUR_APP_ID' 
+          : 'https://play.google.com/store/apps/details?id=YOUR_PACKAGE_NAME';
+
+      // Handle redirection based on platform
+      if (isiOS || isAndroid) {
+        // Attempt to open the app
+        window.location = appScheme;
+
+        // Fallback to the respective store after a timeout
+        setTimeout(function() {
+          window.location = storeLink;
+        }, 1500);
+      } else if (isDesktop) {
+        // Redirect to a web version or a download page for desktop users
+        window.location = 'https://brandname.com/desktop'; // Replace with your desktop page URL
+      }
+    });
+  </script>
+</head>
+<body>
+  <p>Redirecting, please wait...</p>
+</body>
+</html>
