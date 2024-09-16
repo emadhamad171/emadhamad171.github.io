@@ -15,6 +15,11 @@
           ? 'https://apps.apple.com/app/idYOUR_APP_ID' 
           : 'https://play.google.com/store/apps/details?id=YOUR_PACKAGE_NAME';
 
+      console.log(isiOS, 'isiOS');
+      console.log(appScheme, 'appScheme');
+      console.log(storeLink, 'storeLink');
+      console.log(isAndroid, 'isAndroid');
+
       // Handle redirection based on platform
       if (isiOS || isAndroid) {
         // Attempt to open the app
