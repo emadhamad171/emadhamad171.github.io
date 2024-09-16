@@ -12,7 +12,7 @@
       // Define URL schemes and store links
       var appScheme = isiOS ? 'brandname://mobile' : 'brandname://mobile'; // Replace with your URL schemes
       var storeLink = isiOS 
-          ? 'https://apps.apple.com/app/idYOUR_APP_ID' 
+          ? 'https://apps.apple.com/app/6505058684/refer-friend?code=1124124' 
           : 'https://play.google.com/store/apps/details?id=YOUR_PACKAGE_NAME';
 
       console.log(isiOS, 'isiOS');
@@ -20,18 +20,16 @@
       console.log(storeLink, 'storeLink');
       console.log(isAndroid, 'isAndroid');
 
-      // Handle redirection based on platform
-      if (isiOS || isAndroid) {
-        // Attempt to open the app
-        window.location = appScheme;
+      if (isiOS) {
+        // If link was opened just in browser, we can try to open App
+        // window.location = appScheme;
 
-        // Fallback to the respective store after a timeout
         setTimeout(function() {
           window.location = storeLink;
         }, 1500);
-      } else if (isDesktop) {
+      } else {
         // Redirect to a web version or a download page for desktop users
-        window.location = 'https://brandname.com/desktop'; // Replace with your desktop page URL
+        // window.location = 'https://brandname.com/desktop'; // Replace with real URL
       }
     });
   </script>
